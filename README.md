@@ -2,7 +2,9 @@
 
 Magic builder for images.
 
-## Sponzors
+## Sponsor
 
-![](./kodadot.svg)
+![](./k-da.svg)
+
+![](./sub0.svg)
 
