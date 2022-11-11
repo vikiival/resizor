@@ -12,7 +12,12 @@ const svgBuffer = (text = '1') => {
   const magic = `
   <svg width="130" height="70">
   <style>
-  .title { font-size: 43px; font-weight: bold; font-family: sans-serif; fill: #8F00FF; }
+    @font-face {
+      font-family: Kamikaze;
+      src: url(Kamikaze.ttf);
+    }
+
+    .title { font-size: 43px; font-weight: bold; font-family: Kamikaze; fill: #E6007A; }
   </style>
   <text x="50%" y="50%" text-anchor="middle" class="title">#${sn}</text>
 </svg>
@@ -30,7 +35,7 @@ app.post('/border', async ({ body }, res) => {
     .resize(512, 512)
     .extend({
       bottom: 60,
-      background: { r: 240, g: 222, b: 255, alpha: 1 },
+      background: { r: 0, g: 0, b: 0, alpha: 0.1 },
     })
     .composite([
       {
