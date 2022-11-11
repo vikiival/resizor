@@ -12,7 +12,7 @@ const svgBuffer = (text = '1') => {
   const magic = `
   <svg width="130" height="70">
   <style>
-  .title { font-size: 43px; font-weight: bold; font-family: sans-serif; fill: #fff; }
+  .title { font-size: 43px; font-weight: bold; font-family: sans-serif; fill: #8F00FF; }
   </style>
   <text x="50%" y="50%" text-anchor="middle" class="title">#${sn}</text>
 </svg>
@@ -29,19 +29,19 @@ app.post('/border', async ({ body }, res) => {
   const data = await sharp(view)
     .resize(512, 512)
     .extend({
-      bottom: 70,
-      background: { r: 0, g: 0, b: 0, alpha: 0.1 },
+      bottom: 60,
+      background: { r: 240, g: 222, b: 255, alpha: 1 },
     })
     .composite([
       {
-        input: 'kodadot.svg',
-        top: 522,
+        input: 'k-da.svg',
+        top: 525,
         left: 10,
       },
       {
-        input: 'sub0-1.svg',
+        input: 'sub0.svg',
         top: 522,
-        left: 200,
+        left: 180,
       },
       {
         input: svgBuffer('2'),
