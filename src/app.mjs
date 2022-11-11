@@ -27,7 +27,7 @@ const svgBuffer = (text = '1') => {
 }
 
 app.post('/border', async ({ body }, res) => {
-  const { url } = body
+  const { url, id } = body
   const input = await $fetch(url, { responseType: 'blob' })
   const magic = await input.arrayBuffer()
   const view = new Uint8Array(magic)
@@ -49,7 +49,7 @@ app.post('/border', async ({ body }, res) => {
         left: 180,
       },
       {
-        input: svgBuffer('2'),
+        input: svgBuffer(id || '1'),
         top: 522,
         left: 372,
       },
